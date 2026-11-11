@@ -1,0 +1,15 @@
+{
+  "name": "big-dinner",
+  "private": true,
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c auto \"npm run dev -w server\" \"npm run dev -w web\"",
+    "race": "node server/race.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
